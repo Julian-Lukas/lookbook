@@ -84,7 +84,7 @@ class CommitPayload(BaseModel):
 
 
 def _github_headers() -> dict[str, str]:
-    token = os.environ.get("GITHUB_TOKEN", "")
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("github_token") or ""
     if not token:
         raise RuntimeError("GITHUB_TOKEN ist nicht gesetzt (Workspace-Secret github_token fehlt).")
     return {
