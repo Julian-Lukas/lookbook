@@ -226,14 +226,15 @@ async def match_look_items(look: StoredItem, schrank_items: list[StoredItem]) ->
 async def commit_results(payload: CommitPayload) -> str:
     import httpx
 
+    files = dict(payload.files)
+    files["LOOKBOOK.md"] = base64.b64encode(payload.lookbook_md.encode()).decode()
+    files["lookbook-state.json"] = base64.b64encode(payload.state_json.encode()).decode()
+
     if payload.dry_run:
         logger.info("dry_run: kein Commit", dateien=len(files))
         return ""
 
     api = f"https://api.github.com/repos/{_repo()}"
-    files = dict(payload.files)
-    files["LOOKBOOK.md"] = base64.b64encode(payload.lookbook_md.encode()).decode()
-    files["lookbook-state.json"] = base64.b64encode(payload.state_json.encode()).decode()
     async with httpx.AsyncClient(timeout=120, headers=_github_headers()) as client:
         blobs: dict[str, str] = {}
         for path, content_b64 in files.items():
