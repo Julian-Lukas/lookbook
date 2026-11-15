@@ -1,0 +1,663 @@
+{
+  "version": 1,
+  "items": {
+    "schrank/IMG_5259.JPEG": {
+      "path": "schrank/IMG_5259.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5259.jpg",
+      "analysis": {
+        "name": "Schwarze Lederjacke",
+        "kategorie": "jacke",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Eine klassische, eng anliegende Lederjacke mit Reißverschluss und zwei seitlichen Taschen."
+      }
+    },
+    "schrank/IMG_5260.JPEG": {
+      "path": "schrank/IMG_5260.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5260.jpg",
+      "analysis": {
+        "name": "Schwarze Lederjacke",
+        "kategorie": "jacke",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Die glatte, schwarze Lederjacke mit Reißverschluss und kleinem Markenlogo auf der Brust ist ein zeitloses Statement für lässigen Style."
+      }
+    },
+    "schrank/IMG_5261.JPEG": {
+      "path": "schrank/IMG_5261.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5261.jpg",
+      "analysis": {
+        "name": "Schwarze Umhängetasche",
+        "kategorie": "accessoire",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "elegant",
+        "beschreibung": "Eine schlichte, schwarze Umhängetasche aus Leder mit einem minimalistischen Design und einem langen, verstellbaren Schulterriemen."
+      }
+    },
+    "schrank/IMG_5262.JPEG": {
+      "path": "schrank/IMG_5262.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5262.jpg",
+      "analysis": {
+        "name": "Graue Lederjacke",
+        "kategorie": "jacke",
+        "farben": [
+          "grau"
+        ],
+        "stil": "casual",
+        "beschreibung": "Die Jacke ist aus glattem Leder gefertigt und hat einen klassischen, lässigen Schnitt mit Reißverschluss und zwei seitlichen Taschen."
+      }
+    },
+    "schrank/IMG_5263.JPEG": {
+      "path": "schrank/IMG_5263.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5263.jpg",
+      "analysis": {
+        "name": "Weißes Leinenhemd",
+        "kategorie": "oberteil",
+        "farben": [
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein lockeres, langärmeliges Leinenhemd mit Knopfleiste und leicht strukturierter Oberfläche, das einen lässigen Sommerlook unterstreicht."
+      }
+    },
+    "schrank/IMG_5264.JPEG": {
+      "path": "schrank/IMG_5264.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5264.jpg",
+      "analysis": {
+        "name": "Grauer Strickpullover",
+        "kategorie": "oberteil",
+        "farben": [
+          "grau"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein gemütlicher, langärmeliger Strickpullover mit einem kleinen Logo auf der Brust."
+      }
+    },
+    "schrank/IMG_5265.JPEG": {
+      "path": "schrank/IMG_5265.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5265.jpg",
+      "analysis": {
+        "name": "Schwarzes T-Shirt",
+        "kategorie": "oberteil",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein einfaches, schwarzes T-Shirt mit weißem Aufdruck des Logos 'ball creative' auf der Vorderseite."
+      }
+    },
+    "schrank/IMG_5266.JPEG": {
+      "path": "schrank/IMG_5266.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5266.jpg",
+      "analysis": {
+        "name": "Schwarze Lederjacke",
+        "kategorie": "jacke",
+        "farben": [
+          "schwarz",
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Eine klassische schwarze Lederjacke mit weißem Futter und Reißverschluss."
+      }
+    },
+    "schrank/IMG_5267.JPEG": {
+      "path": "schrank/IMG_5267.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5267.jpg",
+      "analysis": {
+        "name": "gestreifter Pullover",
+        "kategorie": "oberteil",
+        "farben": [
+          "blau",
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein langärmeliger, gestreifter Pullover mit einem klassischen, zeitlosen Design."
+      }
+    },
+    "schrank/IMG_5268.JPEG": {
+      "path": "schrank/IMG_5268.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5268.jpg",
+      "analysis": {
+        "name": "Weißes Leinenhemd",
+        "kategorie": "oberteil",
+        "farben": [
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein locker geschnittenes, langärmliges Leinenhemd mit leicht strukturierter Oberfläche und Knopfleiste."
+      }
+    },
+    "schrank/IMG_5269.JPEG": {
+      "path": "schrank/IMG_5269.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5269.jpg",
+      "analysis": {
+        "name": "Grauer Strickpullover",
+        "kategorie": "oberteil",
+        "farben": [
+          "grau"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein langärmeliger, hochgeschlossener Pullover aus weichem Strickmaterial mit glatter Oberfläche."
+      }
+    },
+    "schrank/IMG_5270.JPEG": {
+      "path": "schrank/IMG_5270.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5270.jpg",
+      "analysis": {
+        "name": "Beige Strickweste mit Kapuze",
+        "kategorie": "jacke",
+        "farben": [
+          "beige"
+        ],
+        "stil": "casual",
+        "beschreibung": "Die Weste ist aus weichem Strickmaterial gefertigt und mit einer praktischen Kapuze ausgestattet."
+      }
+    },
+    "schrank/IMG_5271.JPEG": {
+      "path": "schrank/IMG_5271.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5271.jpg",
+      "analysis": {
+        "name": "Weißes Leinenhemd",
+        "kategorie": "oberteil",
+        "farben": [
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein lockeres, langärmliges Leinenhemd mit leichtem Faltenwurf und einem klassischen Kragen."
+      }
+    },
+    "schrank/IMG_5272.JPEG": {
+      "path": "schrank/IMG_5272.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5272.jpg",
+      "analysis": {
+        "name": "grauer Denim Overall",
+        "kategorie": "oberteil",
+        "farben": [
+          "grau",
+          "dunkelblau"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein lässiger, oversized Denim-Overall mit abgenutzten Details und seitlichen Schnallen an den Trägern."
+      }
+    },
+    "schrank/IMG_5273.JPEG": {
+      "path": "schrank/IMG_5273.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5273.jpg",
+      "analysis": {
+        "name": "gestreifter Rollkragenpullover",
+        "kategorie": "oberteil",
+        "farben": [
+          "schwarz",
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein langärmeliger Rollkragenpullover mit feinen schwarzen und weißen Streifen, der einen klassischen, zeitlosen Look bietet."
+      }
+    },
+    "schrank/IMG_5274.JPEG": {
+      "path": "schrank/IMG_5274.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5274.jpg",
+      "analysis": {
+        "name": "Grauer Strickpullover",
+        "kategorie": "oberteil",
+        "farben": [
+          "grau"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein langärmliger, hochgeschlossener Pullover aus dickem, gemustertem Strickstoff."
+      }
+    },
+    "schrank/IMG_5275.JPEG": {
+      "path": "schrank/IMG_5275.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5275.jpg",
+      "analysis": {
+        "name": "kariertes Hemd",
+        "kategorie": "oberteil",
+        "farben": [
+          "schwarz",
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein klassisches, kariertes Hemd mit schwarzem und weißem Muster, das auf einem Bügel präsentiert wird."
+      }
+    },
+    "schrank/IMG_5276.JPEG": {
+      "path": "schrank/IMG_5276.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5276.jpg",
+      "analysis": {
+        "name": "Graue Strickweste",
+        "kategorie": "jacke",
+        "farben": [
+          "grau"
+        ],
+        "stil": "casual",
+        "beschreibung": "Eine gemütliche, taillierte Strickweste mit einem V-Ausschnitt und seitlichen Schlitzen für eine moderne Silhouette."
+      }
+    },
+    "schrank/IMG_5277.JPEG": {
+      "path": "schrank/IMG_5277.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5277.jpg",
+      "analysis": {
+        "name": "Schal mit Karomuster",
+        "kategorie": "accessoire",
+        "farben": [
+          "grün",
+          "schwarz",
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein langer, rechteckiger Schal mit einem markanten Karomuster in den Farben Grün, Schwarz und Weiß."
+      }
+    },
+    "schrank/IMG_5278.JPEG": {
+      "path": "schrank/IMG_5278.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5278.jpg",
+      "analysis": {
+        "name": "Schwarzes T-Shirt mit Logo",
+        "kategorie": "oberteil",
+        "farben": [
+          "schwarz",
+          "weiß"
+        ],
+        "stil": "streetwear",
+        "beschreibung": "Ein eng anliegendes, schwarzes T-Shirt mit einem auffälligen, weißen Puma-Logo auf der Brust."
+      }
+    },
+    "schrank/IMG_5279.JPEG": {
+      "path": "schrank/IMG_5279.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5279.jpg",
+      "analysis": {
+        "name": "Schwarzes Rollkragen-Shirt",
+        "kategorie": "oberteil",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein eng anliegendes, langärmliges Rollkragen-Shirt aus glattem, schwarzem Material."
+      }
+    },
+    "schrank/IMG_5280.JPEG": {
+      "path": "schrank/IMG_5280.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5280.jpg",
+      "analysis": {
+        "name": "Schwarze gestreifte Weste",
+        "kategorie": "jacke",
+        "farben": [
+          "schwarz",
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Eine kurze Weste mit horizontalen schwarzen und weißen Streifen, die auf einem Holzstuhl über einem weißen Hemd liegt."
+      }
+    },
+    "schrank/IMG_5281.JPEG": {
+      "path": "schrank/IMG_5281.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5281.jpg",
+      "analysis": {
+        "name": "Beige Herrenjacke",
+        "kategorie": "jacke",
+        "farben": [
+          "beige"
+        ],
+        "stil": "casual",
+        "beschreibung": "Die Jacke ist ein langes, beiges Modell mit zwei seitlichen Taschen und einem abnehmbaren Pelzfutter im Kragenbereich."
+      }
+    },
+    "schrank/IMG_5282.JPEG": {
+      "path": "schrank/IMG_5282.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5282.jpg",
+      "analysis": {
+        "name": "Beige Leinenbluse",
+        "kategorie": "oberteil",
+        "farben": [
+          "beige",
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Die lockere, langärmelige Bluse aus leichtem Leinenstoff mit Knopfleiste und zwei aufgesetzten Brusttaschen wirkt luftig und sommerlich."
+      }
+    },
+    "schrank/IMG_5283.JPEG": {
+      "path": "schrank/IMG_5283.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5283.jpg",
+      "analysis": {
+        "name": "weißes Leinenhemd",
+        "kategorie": "oberteil",
+        "farben": [
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein lockeres, langärmliges Leinenhemd mit leichtem Faltenwurf und Knopfleiste."
+      }
+    },
+    "schrank/IMG_5284.JPEG": {
+      "path": "schrank/IMG_5284.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5284.jpg",
+      "analysis": {
+        "name": "weißes Leinenhemd",
+        "kategorie": "oberteil",
+        "farben": [
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein lockeres, langärmliges Leinenhemd mit leicht strukturierter Oberfläche und einem kleinen Logo-Aufnäher auf der Brusttasche."
+      }
+    },
+    "schrank/IMG_5285.JPEG": {
+      "path": "schrank/IMG_5285.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5285.jpg",
+      "analysis": {
+        "name": "lila Rollkragenpullover",
+        "kategorie": "oberteil",
+        "farben": [
+          "lila"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein glatter, eng anliegender Rollkragenpullover in kräftigem Lila, der auf einem weißen Hintergrund drapiert ist."
+      }
+    },
+    "schrank/IMG_5286.JPEG": {
+      "path": "schrank/IMG_5286.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5286.jpg",
+      "analysis": {
+        "name": "Schwarzes Rollkragen-Shirt",
+        "kategorie": "oberteil",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein eng anliegendes, langärmeliges Rollkragen-Shirt aus einem glatten, matten Stoff."
+      }
+    },
+    "schrank/IMG_5287.JPEG": {
+      "path": "schrank/IMG_5287.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5287.jpg",
+      "analysis": {
+        "name": "Schwarzes T-Shirt",
+        "kategorie": "oberteil",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein einfaches, langärmliges schwarzes T-Shirt mit rundem Ausschnitt und glattem Stoff."
+      }
+    },
+    "schrank/IMG_5288.JPEG": {
+      "path": "schrank/IMG_5288.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5288.jpg",
+      "analysis": {
+        "name": "Beige Strickweste",
+        "kategorie": "jacke",
+        "farben": [
+          "beige"
+        ],
+        "stil": "casual",
+        "beschreibung": "Eine einfache, beigefarbene Strickweste mit einem kleinen Logo-Anhänger an der rechten Seite."
+      }
+    },
+    "schrank/IMG_5289.JPEG": {
+      "path": "schrank/IMG_5289.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5289.jpg",
+      "analysis": {
+        "name": "Schwarze gestreifte Krawatte",
+        "kategorie": "accessoire",
+        "farben": [
+          "schwarz",
+          "weiß"
+        ],
+        "stil": "business",
+        "beschreibung": "Eine schmale, gestreifte Krawatte mit einem klassischen Design, die sich für formelle Anlässe eignet."
+      }
+    },
+    "schrank/IMG_5290.JPEG": {
+      "path": "schrank/IMG_5290.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5290.jpg",
+      "analysis": {
+        "name": "Grünes Leinen-Oberteil",
+        "kategorie": "oberteil",
+        "farben": [
+          "grün"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein lockeres, langärmeliges Leinen-Oberteil in einem gedeckten Olivgrün mit einem kleinen Logo auf der Brust."
+      }
+    },
+    "schrank/IMG_5291.JPEG": {
+      "path": "schrank/IMG_5291.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5291.jpg",
+      "analysis": {
+        "name": "schwarzes Rundhals-Shirt",
+        "kategorie": "oberteil",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein einfaches, glattes Rundhals-Shirt aus einem weichen, matten Stoff mit leichtem Fall."
+      }
+    },
+    "schrank/IMG_5292.JPEG": {
+      "path": "schrank/IMG_5292.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5292.jpg",
+      "analysis": {
+        "name": "schwarzes Rundhals-Shirt",
+        "kategorie": "oberteil",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein einfaches, eng anliegendes Rundhals-Shirt aus schwarzem Stoff mit einem kleinen Logo auf der linken Brustseite."
+      }
+    },
+    "schrank/IMG_5293.JPEG": {
+      "path": "schrank/IMG_5293.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5293.jpg",
+      "analysis": {
+        "name": "Schwarzes Rundhals-Shirt",
+        "kategorie": "oberteil",
+        "farben": [
+          "schwarz",
+          "weiß"
+        ],
+        "stil": "casual",
+        "beschreibung": "Ein einfaches, langärmliges Rundhals-Shirt aus weichem, dunkelblauem bis schwarzem Stoff mit einem kleinen, dezenten Logo auf der linken Brustseite."
+      }
+    },
+    "schrank/IMG_5294.JPEG": {
+      "path": "schrank/IMG_5294.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5294.jpg",
+      "analysis": {
+        "name": "Schwarze Ledergürtel mit Schnalle",
+        "kategorie": "accessoire",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "elegant",
+        "beschreibung": "Ein klassischer, schmaler Ledergürtel mit einer rechteckigen Metallschnalle, der sich für formelle Anlässe eignet."
+      }
+    },
+    "schrank/IMG_5295.JPEG": {
+      "path": "schrank/IMG_5295.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5295.jpg",
+      "analysis": {
+        "name": "schwarze Lederjacke",
+        "kategorie": "jacke",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Eine klassische, eng anliegende schwarze Lederjacke mit Reißverschluss und markantem Logo auf der linken Brustseite."
+      }
+    },
+    "schrank/IMG_5296.JPEG": {
+      "path": "schrank/IMG_5296.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5296.jpg",
+      "analysis": {
+        "name": "Schwarze Stofftasche",
+        "kategorie": "accessoire",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Eine schlichte, schwarze Stofftasche mit strukturierter Oberfläche und einem geraden Henkel."
+      }
+    },
+    "schrank/IMG_5297.JPEG": {
+      "path": "schrank/IMG_5297.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5297.jpg",
+      "analysis": {
+        "name": "Braune Ledertasche",
+        "kategorie": "accessoire",
+        "farben": [
+          "braun",
+          "beige"
+        ],
+        "stil": "elegant",
+        "beschreibung": "Die schlichte, aber hochwertig wirkende Ledertasche mit strukturierter Oberfläche und abnehmbarer Kette als Verschluss eignet sich für formelle Anlässe."
+      }
+    },
+    "schrank/IMG_5298.JPEG": {
+      "path": "schrank/IMG_5298.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5298.jpg",
+      "analysis": {
+        "name": "graue Stoffhose",
+        "kategorie": "hose",
+        "farben": [
+          "grau"
+        ],
+        "stil": "casual",
+        "beschreibung": "Die Hose besteht aus einem glatten, leicht glänzenden Stoff und hat eine klassische, gerade Passform mit seitlichen Reißverschluss-Taschen."
+      }
+    },
+    "schrank/IMG_5299.JPEG": {
+      "path": "schrank/IMG_5299.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5299.jpg",
+      "analysis": {
+        "name": "Schwarze Damen-Sandalen",
+        "kategorie": "schuh",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Elegante, flache Sandalen mit schmalen Riemchen und einem kleinen Absatz für einen lässigen, aber stilvollen Look."
+      }
+    },
+    "schrank/IMG_5300.JPEG": {
+      "path": "schrank/IMG_5300.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5300.jpg",
+      "analysis": {
+        "name": "Schwarze Lederjacke",
+        "kategorie": "jacke",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Eine klassische schwarze Lederjacke mit glänzender Oberfläche und leicht strukturiertem Material."
+      }
+    },
+    "schrank/IMG_5301.JPEG": {
+      "path": "schrank/IMG_5301.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5301.jpg",
+      "analysis": {
+        "name": "Schwarze Umhängetasche",
+        "kategorie": "accessoire",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Eine schlichte, schwarze Umhängetasche aus Leder mit einem weißen Logo auf der Vorderseite."
+      }
+    },
+    "schrank/IMG_5302.JPEG": {
+      "path": "schrank/IMG_5302.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5302.jpg",
+      "analysis": {
+        "name": "Beige Leinenhose",
+        "kategorie": "hose",
+        "farben": [
+          "beige"
+        ],
+        "stil": "casual",
+        "beschreibung": "Eine lockere, bequeme Hose aus Leinen mit seitlichem Reißverschluss und zwei aufgesetzten Taschen."
+      }
+    },
+    "schrank/IMG_5303.JPEG": {
+      "path": "schrank/IMG_5303.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5303.jpg",
+      "analysis": {
+        "name": "weißes Bettlaken",
+        "kategorie": "sonstiges",
+        "farben": [
+          "weiß"
+        ],
+        "stil": "neutral",
+        "beschreibung": "Ein glatt gebügeltes, weißes Bettlaken mit leicht sichtbaren Falten und einem kleinen Knopf an einer Ecke."
+      }
+    },
+    "schrank/IMG_5304.JPEG": {
+      "path": "schrank/IMG_5304.JPEG",
+      "kind": "schrank",
+      "thumb": "thumbs/IMG_5304.jpg",
+      "analysis": {
+        "name": "Schwarze Lederjacke",
+        "kategorie": "jacke",
+        "farben": [
+          "schwarz"
+        ],
+        "stil": "casual",
+        "beschreibung": "Eine klassische schwarze Lederjacke mit Reißverschluss und seitlichen Reißverschluss-Taschen."
+      }
+    }
+  },
+  "matches": {}
+}
