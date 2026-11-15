@@ -61,6 +61,7 @@ class PhotoInfo(BaseModel):
 
 
 class ScanResult(BaseModel):
+    repo: str
     branch: str
     head_sha: str
     state: dict = Field(default_factory=dict)
@@ -138,7 +139,7 @@ async def scan_repo(dry_run: bool) -> ScanResult:
             and p not in known
         ]
         logger.info("scan abgeschlossen", repo=repo, neue_bilder=len(new_photos), dry_run=dry_run)
-        return ScanResult(branch=branch, head_sha=head_sha, state=state, new_photos=new_photos)
+        return ScanResult(repo=repo, branch=branch, head_sha=head_sha, state=state, new_photos=new_photos)
 
 
 @activity()
@@ -329,7 +330,7 @@ class LookbookSync:
             else:
                 look_matches[look.path] = LookMatches.model_validate(cached)
 
-        lookbook_md = _render_markdown(schrank_items, look_items, look_matches)
+        lookbook_md = _render_markdown(scan.repo, schrank_items, look_items, look_matches)
 
         state = {
             "version": 1,
@@ -371,11 +372,11 @@ class LookbookSync:
 
 
 def _render_markdown(
+    repo: str,
     schrank_items: list[StoredItem],
     look_items: list[StoredItem],
     look_matches: dict[str, LookMatches],
 ) -> str:
-    repo = _repo()
     lines = ["# Mein digitales Lookbook", ""]
     lines.append(
         "Automatisch generiert vom `lookbook_sync` Workflow. "
