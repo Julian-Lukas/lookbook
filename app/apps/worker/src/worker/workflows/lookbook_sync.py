@@ -13,7 +13,7 @@ from typing import Literal
 
 import mistralai.workflows as workflows
 import structlog
-from mistralai.client.models import ChatCompletionRequest, ImageURLChunk, UserMessage
+from mistralai.client.models import ChatCompletionRequest, ImageURLChunk, TextChunk, UserMessage
 from mistralai.workflows import activity
 from mistralai.workflows.plugins.mistralai import chat_parse_to_model
 from pydantic import BaseModel, Field
@@ -180,7 +180,7 @@ async def process_photo(path: str) -> PhotoInfo:
             UserMessage(
                 content=[
                     ImageURLChunk(image_url=data_uri),
-                    prompt,
+                    TextChunk(text=prompt),
                 ]
             )
         ],
