@@ -81,6 +81,7 @@ class CommitPayload(BaseModel):
     branch: str
     head_sha: str
     lookbook_md: str
+    site_html: str
     state_json: str
     files: dict[str, str] = Field(default_factory=dict)
 
@@ -241,6 +242,7 @@ async def commit_results(payload: CommitPayload) -> str:
 
     files = dict(payload.files)
     files["LOOKBOOK.md"] = base64.b64encode(payload.lookbook_md.encode()).decode()
+    files["index.html"] = base64.b64encode(payload.site_html.encode()).decode()
     files["lookbook-state.json"] = base64.b64encode(payload.state_json.encode()).decode()
 
     if payload.dry_run:
@@ -362,6 +364,7 @@ class LookbookSync:
                 look_matches[look.path] = LookMatches.model_validate(cached)
 
         lookbook_md = _render_markdown(scan.repo, schrank_items, look_items, look_matches)
+        site_html = _render_site(scan.repo, schrank_items, look_items, look_matches)
 
         state = {
             "version": 1,
@@ -376,6 +379,7 @@ class LookbookSync:
                 branch=scan.branch,
                 head_sha=scan.head_sha,
                 lookbook_md=lookbook_md,
+                site_html=site_html,
                 state_json=state_json,
                 files=files,
             )
@@ -400,6 +404,133 @@ class LookbookSync:
             commit_sha=commit_sha or None,
             message=nachricht,
         )
+
+
+def _render_site(
+    repo: str,
+    schrank_items: list[StoredItem],
+    look_items: list[StoredItem],
+    look_matches: dict[str, LookMatches],
+) -> str:
+    import html
+
+    def esc(s: str) -> str:
+        return html.escape(s, quote=True)
+
+    def karte(item: StoredItem, footer: str = "") -> str:
+        a = item.analysis
+        badgerl = " ".join(f'<span class="badge">{esc(f)}</span>' for f in a.farben)
+        return (
+            f'<div class="card">'
+            f'<a href="{esc(item.path)}" target="_blank"><img src="{esc(item.thumb)}" alt="{esc(a.name)}" loading="lazy"></a>'
+            f'<div class="card-body"><h3>{esc(a.name)}</h3>'
+            f'<span class="kat">{esc(a.kategorie)}</span>{badgerl}{footer}</div></div>'
+        )
+
+    schrank_html = ""
+    by_kind: dict[str, list[StoredItem]] = {}
+    for item in sorted(schrank_items, key=lambda s: s.path):
+        by_kind.setdefault(item.analysis.kategorie, []).append(item)
+    for kategorie in ["oberteil", "hose", "jacke", "schuh", "accessoire", "sonstiges"]:
+        items = by_kind.get(kategorie, [])
+        if not items:
+            continue
+        schrank_html += f'<h2>{esc(kategorie.capitalize())} <small>({len(items)})</small></h2><div class="grid">'
+        schrank_html += "".join(karte(i) for i in items)
+        schrank_html += "</div>"
+    if not schrank_html:
+        schrank_html = '<p class="empty">Noch keine Fotos in <code>schrank/</code>.</p>'
+
+    looks_html = ""
+    for look in sorted(look_items, key=lambda s: s.path):
+        matches = look_matches.get(look.path)
+        footer = ""
+        if matches and matches.schrank_pfade:
+            treffer = []
+            for path in matches.schrank_pfade[:4]:
+                item = next((s for s in schrank_items if s.path == path), None)
+                if item:
+                    treffer.append(
+                        f'<a class="match" href="{esc(item.thumb)}" target="_blank">'
+                        f'<img src="{esc(item.thumb)}" alt="{esc(item.analysis.name)}">'
+                        f'<span>{esc(item.analysis.name)}</span></a>'
+                    )
+            footer = (
+                f'<div class="matches"><h4>Passt dazu aus deinem Schrank</h4>'
+                f'<div class="match-row">{"".join(treffer)}</div>'
+                + (f'<p class="why">{esc(matches.begruendung)}</p>' if matches.begruendung else "")
+                + "</div>"
+            )
+        else:
+            footer = '<div class="matches"><h4>Passt dazu aus deinem Schrank</h4><p class="why">Noch keine Treffer im Schrank.</p></div>'
+        looks_html += karte(look, footer)
+    if not look_items:
+        looks_html = '<p class="empty">Noch keine Look-Ideen in <code>look/</code> — lade Fotos hoch und der nächste Sync erzeugt sie hier.</p>'
+    looks_html = f'<div class="grid looks">{looks_html}</div>'
+
+    return f"""<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mein Lookbook</title>
+<style>
+:root {{ --bg:#0f1115; --panel:#171a21; --card:#1d2129; --text:#e8eaf0; --muted:#9aa3b2; --accent:#ff7a59; }}
+* {{ box-sizing:border-box; }}
+body {{ margin:0; font-family:-apple-system,'Segoe UI',Roboto,sans-serif; background:var(--bg); color:var(--text); }}
+header {{ padding:2rem 1rem 0; text-align:center; }}
+header h1 {{ margin:0 0 .25rem; font-size:2rem; }}
+header p {{ margin:0 0 1rem; color:var(--muted); }}
+.tabs {{ display:flex; justify-content:center; gap:.5rem; padding:1rem; position:sticky; top:0; background:var(--bg); z-index:5; border-bottom:1px solid #23262e; }}
+.tabs button {{ border:none; border-radius:999px; padding:.6rem 1.6rem; font-size:1rem; cursor:pointer; background:var(--panel); color:var(--muted); }}
+.tabs button.active {{ background:var(--accent); color:#141414; font-weight:600; }}
+main {{ max-width:1100px; margin:0 auto; padding:1rem; }}
+section {{ display:none; }}
+section.active {{ display:block; }}
+h2 {{ margin:1.5rem 0 .75rem; font-size:1.25rem; }}
+h2 small {{ color:var(--muted); font-weight:400; }}
+.grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1rem; }}
+.card {{ background:var(--card); border-radius:14px; overflow:hidden; border:1px solid #23262e; }}
+.card img {{ width:100%; aspect-ratio:1; object-fit:cover; display:block; }}
+.card-body {{ padding: .8rem 1rem 1rem; }}
+.card-body h3 {{ margin:0 0 .4rem; font-size:1rem; }}
+.kat {{ display:inline-block; background:var(--accent); color:#141414; font-size:.72rem; font-weight:600; padding:.15rem .6rem; border-radius:999px; margin-right:.25rem; text-transform:uppercase; }}
+.badge {{ display:inline-block; background:var(--panel); color:var(--muted); font-size:.72rem; padding:.15rem .55rem; border-radius:999px; margin:.25rem .15rem 0; }}
+.matches {{ margin-top:.75rem; border-top:1px solid #23262e; padding-top:.6rem; }}
+.matches h4 {{ margin:0 0 .5rem; font-size:.85rem; color:var(--muted); }}
+.match-row {{ display:flex; gap:.5rem; flex-wrap:wrap; }}
+.match {{ text-decoration:none; color:var(--text); font-size:.72rem; }}
+.match img {{ width:56px; height:56px; border-radius:10px; object-fit:cover; display:block; }}
+.match span {{ display:block; max-width:76px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-top:.2rem; color:var(--muted); }}
+.why {{ color:var(--muted); font-size:.8rem; font-style:italic; margin:.5rem 0 0; }}
+.empty {{ color:var(--muted); text-align:center; padding:2rem; }}
+footer {{ text-align:center; color:var(--muted); font-size:.8rem; padding:2rem; }}
+</style>
+</head>
+<body>
+<header>
+<h1>Mein Lookbook</h1>
+<p>Automatisch generiert vom <code>lookbook_sync</code> Workflow · Originale auf <a href="https://github.com/{repo}">GitHub</a></p>
+</header>
+<nav class="tabs"><button id="tab-schrank" class="active" onclick="show('schrank')">Schrank ({len(schrank_items)})</button><button id="tab-looks" onclick="show('looks')">Looks ({len(look_items)})</button></nav>
+<main>
+<section id="sec-schrank" class="active">{schrank_html}</section>
+<section id="sec-looks">{looks_html}</section>
+</main>
+<footer>Letzter Sync: workflow <code>lookbook_sync</code></footer>
+<script>
+function show(tab) {{
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById('sec-' + tab).classList.add('active');
+  document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  history.replaceState(null, '', '#' + tab);
+}}
+if (location.hash === '#looks') show('looks');
+</script>
+</body>
+</html>
+"""
 
 
 def _render_markdown(
