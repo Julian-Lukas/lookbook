@@ -433,12 +433,7 @@ def _render_markdown(
                 f'<img src="{item.thumb}" alt="{a.name}" width="256"></a>'
             )
             lines.append("")
-            lines.append(
-                f"**Kategorie:** {a.kategorie} · **Farben:** {', '.join(a.farben)} · "
-                f"**Stil:** {a.stil}"
-            )
-            lines.append("")
-            lines.append(f"_{a.beschreibung}_")
+            lines.append(f"**Kategorie:** {a.kategorie} · **Farben:** {', '.join(a.farben)}")
             lines.append("")
             lines.append(f"[Original ansehen]({item.path})")
             lines.append("")
@@ -456,9 +451,7 @@ def _render_markdown(
             f'<img src="{look.thumb}" alt="{a.name}" width="256"></a>'
         )
         lines.append("")
-        lines.append(f"_{a.beschreibung}_")
-        lines.append("")
-        lines.append(f"**Stil:** {a.stil} · **Farben:** {', '.join(a.farben)}")
+        lines.append(f"**Farben:** {', '.join(a.farben)}")
         lines.append("")
         matches = look_matches.get(look.path)
         if matches and matches.schrank_pfade:
