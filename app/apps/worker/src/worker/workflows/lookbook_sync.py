@@ -65,7 +65,6 @@ class ScanResult(BaseModel):
     branch: str
     head_sha: str
     state: dict = Field(default_factory=dict)
-    overrides: dict = Field(default_factory=dict)
     new_photos: list[str] = Field(default_factory=list)
 
 
@@ -131,18 +130,6 @@ async def scan_repo(dry_run: bool) -> ScanResult:
             if resp.status_code == 200:
                 state = resp.json()
 
-        # Manuelle Korrekturen: overrides.json gewinnt immer ueber die KI-Analyse.
-        # Format: {"schrank/IMG_5263.JPEG": {"name": "...", "beschreibung": "...",
-        #          "farben": ["weiss"], "stil": "...", "kategorie": "oberteil"}}
-        overrides: dict = {}
-        if "overrides.json" in all_paths:
-            resp = await client.get(
-                f"https://api.github.com/repos/{repo}/contents/overrides.json",
-                headers={"Accept": "application/vnd.github.raw"},
-            )
-            if resp.status_code == 200:
-                overrides = resp.json()
-
         known = set(state.get("items", {}))
         exts = IMAGE_EXTENSIONS
         new_photos = [
@@ -152,8 +139,8 @@ async def scan_repo(dry_run: bool) -> ScanResult:
             and os.path.splitext(p)[1].lower() in exts
             and p not in known
         ]
-        logger.info("scan abgeschlossen", repo=repo, neue_bilder=len(new_photos), overrides=len(overrides), dry_run=dry_run)
-        return ScanResult(repo=repo, branch=branch, head_sha=head_sha, state=state, overrides=overrides, new_photos=new_photos)
+        logger.info("scan abgeschlossen", repo=repo, neue_bilder=len(new_photos), dry_run=dry_run)
+        return ScanResult(repo=repo, branch=branch, head_sha=head_sha, state=state, new_photos=new_photos)
 
 
 @activity()
@@ -333,23 +320,6 @@ class LookbookSync:
             stored[info.path] = StoredItem(
                 path=info.path, kind=info.kind, thumb=thumb_path, analysis=info.analysis
             )
-
-        # Manuelle overrides.json-Einträge gewinnen immer über die KI-Analyse.
-        angewendet = 0
-        for path, fields in scan.overrides.items():
-            item = stored.get(path)
-            if item is None:
-                logger.warning("override für unbekanntes Foto ignoriert", path=path)
-                continue
-            updates = {k: v for k, v in fields.items() if k in {"name", "kategorie", "farben", "stil", "beschreibung"}}
-            try:
-                item.analysis = item.analysis.model_copy(update=updates)
-                angewendet += 1
-                logger.info("override angewendet", path=path, felder=list(updates))
-            except Exception as exc:
-                logger.warning("override ungültig, ignoriert", path=path, fehler=str(exc))
-        if angewendet:
-            logger.info("overrides übernommen", anzahl=angewendet)
 
         schrank_items = [s for s in stored.values() if s.kind == "schrank"]
         look_items = [s for s in stored.values() if s.kind == "look"]
